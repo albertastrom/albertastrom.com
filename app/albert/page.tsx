@@ -1,5 +1,7 @@
-import  Header from '../components/header/header'
 
+import  Header from '../../components/header/header'
+
+// testing the routing 
 const HomePage = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-sky-400">
@@ -7,11 +9,11 @@ const HomePage = () => {
         <div className="flex justify-center w-full">
           <div className="w-1/3 min-w-[20rem] max-w-[40rem]">
 
-       
+            {/* <PittsburghTripBanner year={'2015'}/> */}
             <Header/>
             <div className="mt-8">
               <h2 className="text-xl font-semibold mb-4">About me</h2>
-              <p className="text-gray-600">I'm a sophomore Computer Science student at Colby College</p>
+              <p className="text-gray-600">THIS IS A TRICK</p>
             </div>
             <div className="mt-8">
               <h2 className="text-xl font-semibold mb-4">Projects</h2>

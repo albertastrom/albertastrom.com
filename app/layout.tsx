@@ -16,6 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="https://emojicdn.elk.sh/🚅" />
+      </head>
       <body className="">{children}</body>
     </html>
   );

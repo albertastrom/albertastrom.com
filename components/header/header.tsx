@@ -4,10 +4,10 @@ import Socials from './socials';
 
 const Header: React.FC = () => {
     return (
-        <div className="flex items-baseline justify-between">
+        <header className="flex items-baseline justify-between">
             <Logo/>
             <Socials/>
-        </div>
+        </header>
     );
 };
 
