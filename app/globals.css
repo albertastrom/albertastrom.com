@@ -3,15 +3,27 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Seurat';
-    src: url('../public/seurat.otf') format('opentype');
+    font-family: 'Mona Sans';
+    src:
+      url('../public/Mona-Sans.woff2') format('woff2 supports variations'),
+      url('../public/Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+  }
+  
+html {
+font-family: 'Mona Sans';
 }
 
-.text-seurat {
-    font-family: 'Seurat', sans-serif;
+.logo {
+font-weight: 800;
+font-stretch: 120%;
+letter-spacing: -1px;
 }
 
 
-body {
+
+
+/* body {
     font-family: 'Poppins', sans-serif;
-}
+} */
