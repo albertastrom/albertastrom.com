@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Seurat';
+    src: url('../public/seurat.otf') format('opentype');
+}
+
+.text-seurat {
+    font-family: 'Seurat', sans-serif;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
