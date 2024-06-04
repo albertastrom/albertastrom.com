@@ -1,4 +1,4 @@
-import  Header from '../components/header/header'
+import Header from '../components/header/header'
 import AboutMe from '../components/content/aboutme'
 import Projects from '../components/content/projects'
 import Experience from '@/components/content/experience'
