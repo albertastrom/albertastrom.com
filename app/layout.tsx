@@ -25,6 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="https://emojicdn.elk.sh/🚅" />
+        {/* prevents website from being indexed by search engines */}
+        <meta name="robots" content="noindex"></meta>
       </head>
       <body className="">{children}</body>
     </html>
