@@ -14,9 +14,15 @@ interface PositionProps {
 const Position: React.FC<PositionProps> = ({ title, company, timeframe, description, link, linkTitle }) => {
   return (
     
-    <div className="mb-4 py-1 px-2 rounded-lg border border-gray-200 shadow-lg flex justify-between">
+    <div className="mb-4 py-1 px-2 rounded-lg border border-gray-200 shadow-lg">
         <div className='px-1 py-2'>
-            <div className='flex justify-between gap-x-2.5 sm:gap-x-2 translate-y-1'><p><span className='font-semibold text-xl'>{title}</span><span className='text-l'>, {company}</span></p> <p className='text-sm'>{timeframe}</p></div>
+            <div className='flex justify-between'>
+                <p>
+                    <span className='font-semibold text-xl'>{title}</span>
+                    <span className='text-l'>, {company}</span>
+                </p>
+                <p className='text-sm'>{timeframe}</p>
+            </div>
             
             
             <p className='text-md text-gray-500'>{description}</p>
