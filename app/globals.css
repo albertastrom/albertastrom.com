@@ -12,6 +12,7 @@
   }
   
 html {
+background-color: #38bdf8;
 font-family: 'Mona Sans';
 }
 
@@ -25,7 +26,7 @@ letter-spacing: -1px;
 .underline-link {
   position: relative;
   text-decoration: none;
-  color: inherit; /* Keep the text color unchanged */
+  color: inherit;
 }
 
 .underline-link::after {
