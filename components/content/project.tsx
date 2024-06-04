@@ -13,7 +13,7 @@ interface ProjectProps {
 const Project: React.FC<ProjectProps> = ({ title, description, link, linkTitle, imageUrl }) => {
   return (
     
-    <div className="mb-4 py-1 px-2 rounded-lg bg-white border border-gray-200 shadow-lg flex justify-between">
+    <div className="mb-4 py-1 px-2 rounded-lg border border-gray-200 shadow-lg flex justify-between">
         <div className='px-1 py-2'>
             <p className='font-semibold text-xl'>{title}</p>
             <p className='text-md text-gray-500'>{description}</p>
