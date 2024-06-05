@@ -5,7 +5,7 @@ import { Poppins } from "next/font/google";
 
 
 import "./globals.css";
-import "../public/Mona-Sans.woff2"
+
 
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="https://emojicdn.elk.sh/🚅" />
-        <link rel="preload" href="Mona-Sans.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/Mona-Sans.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {/* prevents website from being indexed by search engines */}
         <meta name="robots" content="noindex"></meta>
       </head>
