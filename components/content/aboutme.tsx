@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutMe = () => {
   return (
-    <div className="mt-8">
+    <div className="mt-8 text-lg">
 
       <p className="text-gray-600">Hello! I&apos;m <span className='font-semibold'>Albert Astrom</span>, a third year Computer Engineering student at <a href="https://www.dartmouth.edu" target="_blank" rel="noopener noreferrer" className="custom-link c10">Dartmouth College</a> and Computer Science student at <a href="https://www.colby.edu" target="_blank" rel="noopener noreferrer" className="custom-link c10">Colby College</a>.</p>
 
