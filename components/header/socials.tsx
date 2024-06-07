@@ -12,10 +12,10 @@ const Socials: React.FC = () => {
                     </div> 
                 </div>
             </a>
-            <a href="https://github.com/albertastrom" className="text-gray-700 mx-1">
+            <a target="_blank" href="https://github.com/albertastrom" className="text-gray-700 mx-1">
                 <FaGithub size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/albertastrom/" className="text-gray-700 mx-1">
+            <a target="_blank" href="https://www.linkedin.com/in/albertastrom/" className="text-gray-700 mx-1">
                 <FaLinkedin size={24} />
             </a>
 
