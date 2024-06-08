@@ -15,7 +15,7 @@ const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Albert Astrom",
-  description: "personal website",
+  description: "Albert Astrom's personal website.",
 };
 
 export default function RootLayout({
