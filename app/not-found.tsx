@@ -1,4 +1,10 @@
+import { Metadata } from 'next';
 import Header from '../components/header/header';
+
+
+export const metadata: Metadata = {
+  title: "404 Not Found",
+};
 
 const NotFoundPage = () => {
   return (
