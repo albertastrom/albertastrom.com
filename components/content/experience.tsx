@@ -7,7 +7,7 @@ const Experience = () => {
         <h2 className="text-xl font-semibold mb-4">Experience 👨‍💻</h2>
         <Position title="Machine Learning Intern" company="C10 Labs" timeframe="Summer 2024" description="" link="https://www.c10labs.com" linkTitle="c10labs.com"/>
 
-        <Position title="CS231: DSA Teaching Assistant" timeframe="Feb 2023 - May 2024" company="Colby CS Department" description="" link="https://cs.colby.edu/courses/S24/CS251/" linkTitle="cs.colby.edu"/>
+        <Position title="CS231: DSA Teaching Assistant" timeframe="Feb 2023 - May 2024" company="Colby CS Department" description="" link="https://cs.colby.edu/courses/S24/231/" linkTitle="cs.colby.edu"/>
 
         
 
