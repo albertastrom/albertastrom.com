@@ -6,7 +6,7 @@ const Logo: React.FC = () => {
             <a href="/">
                 <div className="py-1 px-2 rounded-lg bg-white border border-gray-200 shadow-lg -mt-8 flex items-center">
                     <div className="w-5 h-5 bg-gradient-to-tr to-blue-900 from-sky-400 rounded-full"></div>
-                    <p className="text-xl font-semibold text-gray-700 ml-2">Albert&nbsp;Astrom</p>
+                    <p className="shine-effect text-xl font-semibold text-gray-700 ml-2">Albert&nbsp;Astrom</p>
                 </div>
             </a>
         </div>
