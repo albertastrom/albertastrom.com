@@ -63,6 +63,10 @@ letter-spacing: -1px;
    background-color: rgba(248, 114, 56, 0.4);
 }
 
+.aqua_cool::after {
+  background-color: rgba(0, 166, 255, 0.4);
+}
+
 
 
 .custom-link {
