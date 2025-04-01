@@ -1,0 +1,89 @@
+:root {
+    --card-border-color: #3b82f6; /* Blue-500 from Tailwind */
+    --card-border-width: 3px;
+    --card-animation-duration: 0.4s; /* Total duration for border trace */
+    --card-scale-duration: 0.3s; /* Duration for scaling */
+    --card-border-radius: 8px;
+  }
+  
+  .hover-card {
+    position: relative; /* Crucial for positioning pseudo-elements */
+    padding: 0.65rem; 
+    background-color: white;
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Important to clip pseudo-elements */
+    transition: transform var(--card-scale-duration) ease-in-out;
+    cursor: pointer;
+    border: 1px solid #e5e7eb; /* Adding thin gray border (gray-200 from Tailwind) */
+    box-sizing: border-box; /* Include border in element's total width and height */
+  }
+  
+  .hover-card-content {
+    position: relative; /* Ensure content stays above pseudo-elements if needed */
+    z-index: 1;
+  }
+  
+  /* --- Hover Effects --- */
+  
+  .hover-card:hover {
+    transform: scale(1.03); /* Slightly enlarge the card */
+    border-color: transparent; /* Hide the gray border when hovered */
+  }
+  
+  /* --- Border Tracing Animation --- */
+  
+  .hover-card::before,
+  .hover-card::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* Same as top: 0; right: 0; bottom: 0; left: 0; */
+    pointer-events: none; /* Don't interfere with hover */
+    border-radius: inherit; /* Use the parent's border-radius */
+    border: var(--card-border-width) solid var(--card-border-color);
+    opacity: 0; /* Initially hidden */
+    transition: opacity var(--card-animation-duration) ease-out;
+    box-sizing: border-box;
+  }
+  
+  /* ::before animates width (top/bottom edges appear) */
+  .hover-card::before {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); /* Start collapsed horizontally */
+    transition: clip-path calc(var(--card-animation-duration) / 2) ease-in, opacity calc(var(--card-animation-duration) / 2) ease-in;
+  }
+  
+  /* ::after animates height (left/right edges appear, delayed) */
+  .hover-card::after {
+     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Start collapsed vertically */
+     transition: clip-path calc(var(--card-animation-duration) / 2) ease-out calc(var(--card-animation-duration) / 2), opacity calc(var(--card-animation-duration) / 2) ease-out calc(var(--card-animation-duration) / 2); /* Delay this animation */
+  }
+  
+  /* On hover, expand the clip-paths and make visible */
+  .hover-card:hover::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Expand horizontally */
+    opacity: 1;
+  }
+  
+  .hover-card:hover::after {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Expand vertically */
+    opacity: 1;
+  }
+  
+  /* Optional: Add a subtle transition out */
+  .hover-card:not(:hover)::before,
+  .hover-card:not(:hover)::after {
+    opacity: 0;
+    transition-duration: calc(var(--card-animation-duration) / 2); /* Faster fade out */
+    transition-timing-function: ease-out;
+  }
+  .hover-card:not(:hover)::before {
+      transition-delay: calc(var(--card-animation-duration) / 2); /* Delay fade out to match hover out */
+  }
+  .hover-card:not(:hover)::after {
+      transition-delay: 0s;
+  }
+
+  /* Hide images when imageHidden class is applied */
+  .hover-card.image-hidden img {
+    display: none;
+  }

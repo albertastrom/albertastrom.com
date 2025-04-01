@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLink } from "react-icons/fa";
+import HoverCard from "./HoverCard"; 
 
 interface ProjectProps {
   title: string;
@@ -7,7 +8,7 @@ interface ProjectProps {
   timeframe: string;
   link: string;
   linkTitle: string;
-  imageUrl: string;
+  imageUrl?: string; // Made optional as it was commented out
   technologies: string[];
 }
 
@@ -21,36 +22,48 @@ const Project: React.FC<ProjectProps> = ({
   technologies = [],
 }) => {
   return (
-    <div className="mb-4 py-1 px-2 rounded-lg border border-gray-200 shadow-lg flex justify-between">
-      <div className="px-1 py-2">
-        <div className="flex justify-between">
-          <p className="font-semibold text-xl">{title}</p>
-          <p className="text-sm text-gray-600">{timeframe}</p>
+    // Use HoverCard with imageHidden set to true to ensure image doesn't display
+    <HoverCard className="mb-4" imageHidden={true}>
+      <div className="flex justify-between "> {/* Reduced padding from py-3 px-4 to py-2 px-3 */}
+        {/* Main content area */}
+        <div className="flex-grow pr-3"> {/* Reduced padding from pr-4 to pr-3 */}
+          <div className="flex justify-between items-start mb-0.5">
+            <p className="font-semibold text-xl mr-2">{title}</p>
+            <p className="text-sm text-gray-600 flex-shrink-0">{timeframe}</p>
+          </div>
+          <p className="text-md text-gray-500 mb-2">{description}</p>
+          <div className="flex flex-wrap mb-2">
+            {technologies.map((tech, index) => (
+              <span
+                key={index}
+                className="inline-block bg-gray-200 rounded-full px-2 py-0.5 text-sm font-semibold text-gray-700 mr-2 mb-1 mt-0.5"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center font-semibold text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+          >
+            <FaLink className="mr-1 text-gray-600 group-hover:text-blue-600 transition-colors duration-200" />
+            {linkTitle}
+          </a>
         </div>
-        <p className="text-md text-gray-500">{description}</p>
-        <div className="flex flex-wrap ">
-          {technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="inline-block bg-gray-200 rounded-full px-2 text-sm font-semibold text-gray-700 mr-2 mb-2 mt-2"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        <a
-          href={link}
-          target="_blank"
-          className="inline-block font-semibold text-gray-600 text-sm"
-        >
-          <FaLink className="inline-block text-gray-600 text-sm mr-1" />
-          {linkTitle}
-        </a>
+        {/* Image reference remains but will be hidden by our CSS */}
+        {imageUrl && (
+          <div className="flex-shrink-0 self-center">
+            <img
+              src={imageUrl}
+              alt={title}
+              className="w-24 h-24 object-cover rounded-md"
+            />
+          </div>
+        )}
       </div>
-      {/* <div>
-            <img src={imageUrl} alt={title} className="w-24 h-24 object-cover px-1 py-1 rounded-lg"/>
-        </div> */}
-    </div>
+    </HoverCard>
   );
 };
 
