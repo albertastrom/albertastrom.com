@@ -33,9 +33,10 @@ const Position: React.FC<PositionProps> = ({
         <a
           href={link}
           target="_blank"
-          className="inline-block font-semibold text-gray-600 text-sm"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center font-semibold text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
         >
-          <FaLink className="inline-block text-gray-600 text-sm mr-1" />
+          <FaLink className="mr-1 text-gray-600 group-hover:text-blue-600 transition-colors duration-200" />
           {linkTitle}
         </a>
       </div>
