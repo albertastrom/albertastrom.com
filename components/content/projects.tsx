@@ -3,7 +3,7 @@ import Project from "./project";
 
 const Projects = () => {
   return (
-    <div className="mt-8 px-4 py-2 rounded-lg bg-white border border-gray-200 mb-6">
+    <div className="mt-8 px-4 py-2 rounded-lg bg-white border border-gray-200 mb-6 shadow-lg">
       <h2 className="text-xl font-semibold mb-4">Projects</h2>
       <Project
         title="CRInteractive"
