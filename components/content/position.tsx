@@ -25,7 +25,7 @@ const Position: React.FC<PositionProps> = ({
         <div className="flex justify-between mb-0.5">
           <p>
             <span className="font-semibold text-xl">{title}</span>
-            <span className="text-l">, {company}</span>
+            <span className="text-lg">, {company}</span>
           </p>
           <p className="text-sm text-gray-600">{timeframe}</p>
         </div>
