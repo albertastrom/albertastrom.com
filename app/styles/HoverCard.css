@@ -1,5 +1,7 @@
 :root {
-    --card-border-color: #3b82f6; /* Blue-500 from Tailwind */
+    /* --card-border-color: #3b82f6; Blue-500 from Tailwind */
+    --card-border-color: #0ea5e9; /* sky-500 from Tailwind */
+    /* --card-border-color: #0284c7; sky 600 */
     --card-border-width: 3px;
     --card-animation-duration: 0.4s; /* Total duration for border trace */
     --card-scale-duration: 0.3s; /* Duration for scaling */

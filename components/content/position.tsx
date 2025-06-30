@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaLink } from "react-icons/fa";
-import HoverCard from "./HoverCard";
 import { annotate } from "rough-notation";
 
 interface PositionProps {
@@ -22,26 +21,43 @@ const Position: React.FC<PositionProps> = ({
   linkTitle,
 }) => {
   const titleCompanyRef = useRef<HTMLSpanElement>(null);
+  const [annotation, setAnnotation] = useState<any>(null);
 
   useEffect(() => {
     if (titleCompanyRef.current) {
-      const annotation = annotate(titleCompanyRef.current, {
-        type: "underline",
-        // color: "#2563eb", // blue-600
+      const newAnnotation = annotate(titleCompanyRef.current, {
+        type: "bracket",
         color: "#0ea5e9",  // sky-500
-        strokeWidth: 2,
+        strokeWidth: 1,
         padding: 2,
       });
-      annotation.show();
+      setAnnotation(newAnnotation);
     }
   }, [title, company]);
 
+  const handleMouseEnter = () => {
+    if (annotation) {
+      annotation.show();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (annotation) {
+      annotation.hide();
+    }
+  };
+
   return (
-    <HoverCard className="mb-4">
+    <div className="mb-4 p-4 rounded-lg bg-white border border-gray-200 shadow-md">
       <div className="">
         <div className="flex justify-between mb-0.5">
           <p>
-            <span ref={titleCompanyRef} className="inline">
+            <span 
+              ref={titleCompanyRef} 
+              className="inline cursor-pointer"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <span className="font-semibold text-xl">{title}</span>
               <span className="text-lg">, {company}</span>
             </span>
@@ -59,7 +75,7 @@ const Position: React.FC<PositionProps> = ({
           {linkTitle}
         </a>
       </div>
-    </HoverCard>
+    </div>
   );
 };
 
