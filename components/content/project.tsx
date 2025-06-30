@@ -8,7 +8,7 @@ interface ProjectProps {
   timeframe: string;
   link: string;
   linkTitle: string;
-  imageUrl?: string; // Made optional as it was commented out
+  imageUrl?: string; 
   technologies: string[];
 }
 
@@ -24,7 +24,7 @@ const Project: React.FC<ProjectProps> = ({
   return (
     // Use HoverCard with imageHidden set to true to ensure image doesn't display
     <HoverCard className="mb-4" imageHidden={true}>
-      <div className="flex justify-between "> {/* Reduced padding from py-3 px-4 to py-2 px-3 */}
+      <div className="flex justify-between "> 
         {/* Main content area */}
         <div className="flex-grow pr-3"> {/* Reduced padding from pr-4 to pr-3 */}
           <div className="flex justify-between items-start mb-0.5">
@@ -52,7 +52,7 @@ const Project: React.FC<ProjectProps> = ({
             {linkTitle}
           </a>
         </div>
-        {/* Image reference remains but will be hidden by our CSS */}
+        
         {imageUrl && (
           <div className="flex-shrink-0 self-center">
             <img
