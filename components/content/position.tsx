@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaLink } from "react-icons/fa";
 import { annotate } from "rough-notation";
 
@@ -21,43 +21,26 @@ const Position: React.FC<PositionProps> = ({
   linkTitle,
 }) => {
   const titleCompanyRef = useRef<HTMLSpanElement>(null);
-  const [annotation, setAnnotation] = useState<any>(null);
 
   useEffect(() => {
     if (titleCompanyRef.current) {
-      const newAnnotation = annotate(titleCompanyRef.current, {
-        type: "bracket",
+      const annotation = annotate(titleCompanyRef.current, {
+        type: "underline",
+        // color: "#2563eb", // blue-600
         color: "#0ea5e9",  // sky-500
         strokeWidth: 1,
         padding: 2,
       });
-      setAnnotation(newAnnotation);
-    }
-  }, [title, company]);
-
-  const handleMouseEnter = () => {
-    if (annotation) {
       annotation.show();
     }
-  };
-
-  const handleMouseLeave = () => {
-    if (annotation) {
-      annotation.hide();
-    }
-  };
+  }, [title, company]);
 
   return (
     <div className="mb-4 p-4 rounded-lg bg-white border border-gray-200 shadow-md">
       <div className="">
         <div className="flex justify-between mb-0.5">
           <p>
-            <span 
-              ref={titleCompanyRef} 
-              className="inline cursor-pointer"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+            <span ref={titleCompanyRef} className="inline">
               <span className="font-semibold text-xl">{title}</span>
               <span className="text-lg">, {company}</span>
             </span>
