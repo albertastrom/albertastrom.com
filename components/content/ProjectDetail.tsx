@@ -7,7 +7,7 @@ interface Props {
 
 const ProjectDetail: React.FC<Props> = ({ project }) => {
   return (
-    <div className="space-y-4">
+    <div className="mt-8 space-y-4">
       {project.imageUrl && (
         <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover rounded-md" />
       )}

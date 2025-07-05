@@ -9,7 +9,12 @@
     "imageUrl": "https://www.uncovercolorado.com/wp-content/uploads/2013/12/Aspen-Highlands-Bowl-Hike-800x400.jpg",
     "technologies": ["Python", "Flask", "PostgreSQL"],
     "contributors": [],
-    "links": []
+    "links": [
+      {
+        "title": "CRInteractive",
+        "url": "https://www.crinteractive.org"
+      }
+    ]
   },
   {
     "slug": "stud",
