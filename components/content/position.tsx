@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import { FaLink } from "react-icons/fa";
-import HoverCard from "./HoverCard";
+import { annotate } from "rough-notation";
 
 interface PositionProps {
   title: string;
@@ -19,13 +20,30 @@ const Position: React.FC<PositionProps> = ({
   link,
   linkTitle,
 }) => {
+  const titleCompanyRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (titleCompanyRef.current) {
+      const annotation = annotate(titleCompanyRef.current, {
+        type: "underline",
+        // color: "#2563eb", // blue-600
+        color: "#0ea5e9",  // sky-500
+        strokeWidth: 1,
+        padding: 2,
+      });
+      annotation.show();
+    }
+  }, [title, company]);
+
   return (
-    <HoverCard className="mb-4">
+    <div className="mb-4 p-4 rounded-lg bg-white border border-gray-200 shadow-md">
       <div className="">
         <div className="flex justify-between mb-0.5">
           <p>
-            <span className="font-semibold text-xl">{title}</span>
-            <span className="text-l">, {company}</span>
+            <span ref={titleCompanyRef} className="inline">
+              <span className="font-semibold text-xl">{title}</span>
+              <span className="text-lg">, {company}</span>
+            </span>
           </p>
           <p className="text-sm text-gray-600">{timeframe}</p>
         </div>
@@ -40,7 +58,7 @@ const Position: React.FC<PositionProps> = ({
           {linkTitle}
         </a>
       </div>
-    </HoverCard>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './logo'
+import Logo from './logo';
 import Socials from './socials';
 
 const Header: React.FC = () => {
