@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header/header';
+import Footer from '../footer/Footer';
 
 interface Props {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ const PageWrapper: React.FC<Props> = ({ children }) => {
         <div className="max-w-screen-md mx-auto">
           <Header />
           {children}
+          <Footer />
         </div>
       </div>
     </div>
