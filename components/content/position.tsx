@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { FaLink } from "react-icons/fa";
-import { annotate } from "rough-notation";
 
 interface PositionProps {
   title: string;
@@ -22,23 +21,9 @@ const Position: React.FC<PositionProps> = ({
   linkTitle,
   isLast = false,
 }) => {
-  const titleCompanyRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (titleCompanyRef.current) {
-      const annotation = annotate(titleCompanyRef.current, {
-        type: "underline",
-        color: "#0ea5e9",  // sky-500
-        strokeWidth: 1,
-        padding: 2,
-      });
-      annotation.show();
-    }
-  }, [title, company]);
-
   return (
     <div className={`group relative${isLast ? ' mb-4' : ' mb-8'}`}>
-      {/* Timeline Node with Pulse Signal */}
+      {/* Timeline Node with Pulse Signal - Centered on timeline */}
       <div className="absolute left-2.5 top-1.5 w-5 h-5 flex items-center justify-center">
         {/* Signal Pulse */}
         <span className="absolute inline-block w-8 h-8 rounded-full bg-sky-500 opacity-0 group-hover:opacity-40 group-hover:animate-pulse-signal transition-all duration-500 z-0"></span>
@@ -48,7 +33,7 @@ const Position: React.FC<PositionProps> = ({
       <div className="pl-12 pr-4">
         <div className="flex justify-between mb-0.5">
           <p>
-            <span ref={titleCompanyRef} className="inline">
+            <span className="inline">
               <span className="font-semibold text-xl">{title}</span>
               <span className="text-lg">, {company}</span>
             </span>
