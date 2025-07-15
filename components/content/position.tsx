@@ -10,6 +10,7 @@ interface PositionProps {
   description: string;
   link: string;
   linkTitle: string;
+  isLast?: boolean;
 }
 
 const Position: React.FC<PositionProps> = ({
@@ -19,6 +20,7 @@ const Position: React.FC<PositionProps> = ({
   description,
   link,
   linkTitle,
+  isLast = false,
 }) => {
   const titleCompanyRef = useRef<HTMLSpanElement>(null);
 
@@ -26,7 +28,6 @@ const Position: React.FC<PositionProps> = ({
     if (titleCompanyRef.current) {
       const annotation = annotate(titleCompanyRef.current, {
         type: "underline",
-        // color: "#2563eb", // blue-600
         color: "#0ea5e9",  // sky-500
         strokeWidth: 1,
         padding: 2,
@@ -36,8 +37,15 @@ const Position: React.FC<PositionProps> = ({
   }, [title, company]);
 
   return (
-    <div className="mb-4 p-4 rounded-lg bg-white border border-gray-200 shadow-md">
-      <div className="">
+    <div className={`group relative${isLast ? ' mb-4' : ' mb-8'}`}>
+      {/* Timeline Node with Pulse Signal */}
+      <div className="absolute left-2.5 top-1.5 w-5 h-5 flex items-center justify-center">
+        {/* Signal Pulse */}
+        <span className="absolute inline-block w-8 h-8 rounded-full bg-sky-500 opacity-0 group-hover:opacity-40 group-hover:animate-pulse-signal transition-all duration-500 z-0"></span>
+        {/* Main Node */}
+        <span className="relative w-4 h-4 rounded-full bg-sky-500 border-2 border-white shadow-md z-10 transition-transform duration-200 group-hover:scale-110"></span>
+      </div>
+      <div className="pl-12 pr-4">
         <div className="flex justify-between mb-0.5">
           <p>
             <span ref={titleCompanyRef} className="inline">
@@ -52,9 +60,9 @@ const Position: React.FC<PositionProps> = ({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center font-semibold text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+          className="group/link inline-flex items-center font-semibold text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
         >
-          <FaLink className="mr-1 text-gray-600 group-hover:text-blue-600 transition-colors duration-200" />
+          <FaLink className="mr-1 text-gray-600 group-hover/link:text-blue-600 transition-colors duration-200" />
           {linkTitle}
         </a>
       </div>
