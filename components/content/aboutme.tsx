@@ -5,7 +5,7 @@ const AboutMe = () => {
     <div className="mt-8 px-4 py-2 rounded-lg bg-white border border-gray-200 shadow-lg">
       <h2 className="text-xl font-semibold mb-4">About Me</h2>
       
-      <p className="text-lg text-gray-600">Hello! I&apos;m <span className='font-semibold'>Albert Astrom</span>, a rising fourth-year Computer Engineering student at <a href="https://www.dartmouth.edu" target="_blank" rel="noopener noreferrer" className="custom-link aqua_cool">Dartmouth College</a> and Computer Science student at <a href="https://www.colby.edu" target="_blank" rel="noopener noreferrer" className="custom-link aqua_cool">Colby College</a>.</p>
+      <p className="text-lg text-gray-600">Hello! I&apos;m <span className='font-semibold'>Albert Astrom</span>, a fourth-year Computer Engineering student at <a href="https://www.dartmouth.edu" target="_blank" rel="noopener noreferrer" className="custom-link aqua_cool">Dartmouth College</a> and Computer Science student at <a href="https://www.colby.edu" target="_blank" rel="noopener noreferrer" className="custom-link aqua_cool">Colby College</a>.</p>
 
       <br></br>
 
@@ -16,7 +16,7 @@ const AboutMe = () => {
       <br></br>
 
       <p className="text-lg text-gray-600">
-      This summer, I&apos;m interning at <a href="https://www.evroc.com" target="_blank" rel="noopener noreferrer" className="custom-link aqua_cool" >evroc</a> in Stockholm, Sweden as a Machine Learning Engineer helping build a sovereign, secure, and scalable cloud for Europe.
+      This past summer, I interned at <a href="https://www.evroc.com" target="_blank" rel="noopener noreferrer" className="custom-link aqua_cool" >evroc</a> in Stockholm, Sweden as a Machine Learning Engineer helping build a sovereign, secure, and scalable cloud for Europe.
       </p>
       {/* <p className="text-lg text-gray-600">
       Last summer, I interned at <a href="https://www.c10labs.com" target="_blank" rel="noopener noreferrer" className="custom-link aqua_cool" >C10 Labs</a> in Cambridge, MA as a Machine Learning Engineer. 
