@@ -23,17 +23,10 @@ const Experience = () => {
           description="Developing startup application review system using LangChain, React, and serverless functions for the C10 Labs accelerator program." 
           link="https://www.c10labs.com" 
           linkTitle="c10labs.com"
-        />
-
-        <Position 
-          title="CS Teaching Assistant" 
-          timeframe="Feb. 2023 - May 2024" 
-          company="Colby CS" 
-          description="CS231: Data Structures and Algorithms, CS333: Programming Languages" 
-          link="https://cs.colby.edu/courses/S24/231/" 
-          linkTitle="cs.colby.edu"
           isLast={true}
         />
+
+        
       </div>
     </div>
   );

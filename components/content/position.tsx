@@ -54,12 +54,12 @@ const Position: React.FC<PositionProps> = ({
         {!isLast ? (
           <div className="w-0.5 flex-1 bg-gradient-to-b from-sky-300 to-sky-200 min-h-[80px]" />
         ) : (
-          <div className="w-0.5 h-16 bg-gradient-to-b from-sky-300 to-transparent" />
+          <div className="w-0.5 h-20 bg-gradient-to-b from-sky-300 to-transparent" />
         )}
       </div>
 
       {/* Content */}
-      <div className={`flex-1 ${isLast ? 'pb-4' : 'pb-8'}`}>
+      <div className={`flex-1 ${isLast ? 'pb-2' : 'pb-2'}`}>
         <div className="flex justify-between items-start mb-1">
           <p>
             <span className="inline">
