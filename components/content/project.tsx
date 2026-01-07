@@ -46,9 +46,9 @@ const Project: React.FC<ProjectProps> = ({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center font-semibold text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+            className="group inline-flex items-center font-semibold text-sky-600 hover:text-sky-700 text-sm transition-colors duration-200"
           >
-            <FaLink className="mr-1 text-gray-600 group-hover:text-blue-600 transition-colors duration-200" />
+            <FaLink className="mr-1 text-sky-500 group-hover:text-sky-600 transition-colors duration-200" />
             {linkTitle}
           </a>
         </div>
