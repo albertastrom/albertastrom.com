@@ -19,7 +19,7 @@ const Projects = () => {
 
       <Project
         title="Multi-FPGA Graphics Engine"
-        description="Built a multi-board graphics system that synchronizes multiple FPGAs to expand memory capacity for large frame buffers and VGA output."
+        description="A multi-board graphics system that synchronizes multiple FPGAs to expand memory capacity for large frame buffers and VGA output."
         timeframe="March 2025 - June 2025"
         link="https://www.github.com/albertastrom/multi-fpga-graphics-engine"
         linkTitle="github.com/albertastrom/multi-fpga-graphics-engine"
