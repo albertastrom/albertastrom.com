@@ -2,12 +2,16 @@ import React from "react";
 import { FaLink } from "react-icons/fa";
 import HoverCard from "./HoverCard"; 
 
+interface Link {
+  url: string;
+  title: string;
+}
+
 interface ProjectProps {
   title: string;
   description: string;
   timeframe: string;
-  link: string;
-  linkTitle: string;
+  links?: Link[];
   imageUrl?: string; 
   technologies: string[];
 }
@@ -16,8 +20,7 @@ const Project: React.FC<ProjectProps> = ({
   title,
   description,
   timeframe,
-  link,
-  linkTitle,
+  links,
   imageUrl,
   technologies = [],
 }) => {
@@ -42,15 +45,22 @@ const Project: React.FC<ProjectProps> = ({
               </span>
             ))}
           </div>
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center font-semibold text-sky-600 hover:text-sky-700 text-sm transition-colors duration-200"
-          >
-            <FaLink className="mr-1 text-sky-500 group-hover:text-sky-600 transition-colors duration-200" />
-            {linkTitle}
-          </a>
+          {links && links.length > 0 && (
+            <div className="flex flex-wrap gap-3">
+              {links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center font-semibold text-sky-600 hover:text-sky-700 text-sm transition-colors duration-200"
+                >
+                  <FaLink className="mr-1 text-sky-500 group-hover:text-sky-600 transition-colors duration-200" />
+                  {link.title}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
         
         {imageUrl && (
