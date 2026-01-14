@@ -30,7 +30,7 @@ export default function RootLayout({
         <link rel="icon" href="https://emojicdn.elk.sh/🚅" />
         <link rel="preload" href="/Mona-Sans.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {/* prevents website from being indexed by search engines */}
-        <meta name="robots" content="noindex"></meta>
+        {/* <meta name="robots" content="noindex"></meta> */}
       </head>
       <body className="">{children}</body>
     </html>
